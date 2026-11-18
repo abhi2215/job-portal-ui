@@ -275,6 +275,31 @@ const Login = () => {
               </div>
             </div>
 
+            {/* User Type Field */}
+            <div>
+              <label
+                className={`block text-sm font-semibold ${
+                  theme === "dark" ? "text-gray-300" : "text-gray-700"
+                } mb-2`}
+              >
+                Account Type
+              </label>
+              <select
+                name="userType"
+                value={formData.userType}
+                onChange={handleChange}
+                className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300 outline-none ${
+                  theme === "dark"
+                    ? "bg-gray-700 border-gray-600 text-white"
+                    : "bg-white border-gray-300 text-gray-900"
+                }`}
+              >
+                <option value="jobSeeker">Job Seeker</option>
+                <option value="employer">Employer</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+
             {/* Success Message */}
             {successMessage && (
               <div
